@@ -26,15 +26,29 @@ npm run build                # 배포 전 빌드 확인
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | 배포 주소 (예: `https://our-wedding.vercel.app`). OG 이미지·카카오 공유 썸네일의 절대 경로에 사용 |
 | `NEXT_PUBLIC_KAKAO_JS_KEY` | 카카오 JavaScript 키. 카카오톡 공유 + 카카오맵 지도 |
+| `PREVIEW_SECRET` | 오픈 전 미리보기 비밀값 (아래 참고) |
+| `SITE_OPEN` | `true` 면 모두에게 공개. 없거나 다른 값이면 안내 페이지 |
 
 키는 코드에 넣지 않고 `.env.local`(로컬)과 Vercel 환경변수로만 관리합니다.
+
+## 오픈 전 비공개 모드
+
+`SITE_OPEN` 이 `true` 가 아니면 방문자에게는 **안내 페이지**(`src/app/coming-soon`)가 보이고,
+본인만 실제 청첩장을 볼 수 있습니다. (`src/proxy.ts`)
+
+- 내 기기에서 보기: `https://<주소>/?preview=<PREVIEW_SECRET 값>` 에 한 번 접속 → 그 브라우저에 1년간 기억
+  - 휴대폰·PC·카카오톡 인앱 브라우저는 각각 따로 한 번씩 접속해야 합니다.
+- 남들에게 보이는 화면 확인: `/?preview=off`
+- 정식 공개: Vercel 환경변수 `SITE_OPEN=true` 로 바꾸고 Redeploy
+- 공개 전 링크가 공유돼도 미리보기에는 이름·일정이 나오지 않습니다. 공개 후에는 카카오 공유 디버거에서 캐시를 초기화하세요.
 
 ## 배포 설정 체크리스트
 
 ### 1. Vercel
-1. Project → Settings → Environment Variables 에 위 두 값을 **Production / Preview** 모두 등록
-2. 환경변수 추가·변경 후에는 **Redeploy** 해야 반영됩니다 (`NEXT_PUBLIC_*` 는 빌드 시점에 들어감)
-3. (선택) Settings → Domains 에서 커스텀 도메인 연결 → `NEXT_PUBLIC_SITE_URL` 도 그 주소로 변경
+1. Settings → Git → **Production Branch 가 `main`** 인지 확인
+2. Project → Settings → Environment Variables 에 위 값들을 **Production / Preview** 모두 등록
+3. 환경변수 추가·변경 후에는 **Redeploy** 해야 반영됩니다 (`NEXT_PUBLIC_*` 는 빌드 시점에 들어감)
+4. (선택) Settings → Domains 에서 커스텀 도메인 연결 → `NEXT_PUBLIC_SITE_URL` 도 그 주소로 변경
 
 ### 2. 카카오 developers (https://developers.kakao.com)
 1. 내 애플리케이션 → 애플리케이션 추가
