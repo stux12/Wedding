@@ -1,0 +1,118 @@
+.venue {
+  font-size: 17px;
+}
+
+.hall {
+  font-size: 15px;
+  color: var(--text-sub);
+}
+
+.address {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+.tel {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.mapWrap {
+  margin: 28px -28px 0;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: var(--accent-soft);
+}
+
+.mapCanvas {
+  position: absolute;
+  inset: 0;
+}
+
+.mapFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.navButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.naver { background: #03c75a; }
+.kakao { background: #fee500; color: #3c1e1e; }
+.tmap { background: linear-gradient(135deg, #ef3d5b, #4a5cf5); }
+
+.copy {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.guide {
+  margin: 40px 0 0;
+  text-align: left;
+}
+
+.guideItem {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.guideItem:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.guideItem dt {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.guideItem dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.75;
+}
