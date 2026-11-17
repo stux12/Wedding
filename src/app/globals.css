@@ -1,0 +1,159 @@
+:root {
+  --bg-outer: #ece6dc;
+  --bg: #f8f5ef;
+  --bg-soft: #f1ece3;
+  --surface: #ffffff;
+  --text: #3d3833;
+  --text-sub: #7d746a;
+  --text-faint: #a99f93;
+  --accent: #a3876a;
+  --accent-soft: #e7ddd0;
+  --groom: #6f8297;
+  --bride: #b4807c;
+  --line: #e4ddd2;
+  --max-w: 430px;
+  --font-serif: "Gowun Batang", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-outer);
+  color: var(--text);
+  font-family: var(--font-serif), "Nanum Myeongjo", "AppleMyungjo", serif;
+  font-size: 15px;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 폰 화면처럼 가운데 정렬된 단일 컬럼 */
+.page {
+  position: relative;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+@media (min-width: 431px) {
+  .page {
+    box-shadow: 0 0 40px rgba(60, 45, 30, 0.08);
+  }
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* 공통 섹션 */
+.section {
+  padding: 72px 28px;
+  text-align: center;
+}
+
+.section-soft {
+  background: var(--bg-soft);
+}
+
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--text);
+  transition: background 0.15s;
+}
+
+.btn:active {
+  background: var(--bg-soft);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 스크롤 시 부드럽게 나타나기 — JS 가 동작할 때만 숨김 처리 */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
