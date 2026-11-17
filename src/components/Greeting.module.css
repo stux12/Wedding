@@ -1,0 +1,43 @@
+.message {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 2.1;
+  color: var(--text);
+}
+
+.families {
+  margin: 48px auto 36px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.family {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 15px;
+}
+
+.parents {
+  white-space: nowrap;
+}
+
+.dot {
+  color: var(--text-faint);
+}
+
+.of {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-right: 6px;
+}
+
+.child {
+  font-weight: 700;
+  font-size: 16px;
+}

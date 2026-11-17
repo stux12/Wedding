@@ -1,0 +1,84 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chevron {
+  display: inline-block;
+  line-height: 1;
+  transform: translateY(-3px);
+  transition: transform 0.25s;
+}
+
+.up {
+  transform: translateY(3px) rotate(180deg);
+}
+
+/* grid-template-rows 트릭으로 높이 자동 애니메이션 */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 100%;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.open {
+  grid-template-rows: 1fr;
+}
+
+.inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 8px 18px;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.row + .row {
+  border-top: 1px solid var(--bg-soft);
+}
+
+.role {
+  width: 76px;
+  text-align: left;
+  font-size: 12px;
+}
+
+.groom { color: var(--groom); }
+.bride { color: var(--bride); }
+
+.name {
+  flex: 1;
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  color: var(--text-sub);
+}
