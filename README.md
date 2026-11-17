@@ -2,6 +2,9 @@
 
 Next.js 16 (App Router) · TypeScript · CSS Modules
 
+- 배포 주소: https://js-wedding-eight.vercel.app (QR 코드에 인쇄된 주소 — **도메인·프로젝트 이름 변경 금지**)
+- 배포: Vercel ↔ GitHub `main` 브랜치 연결. `main` 에 push 하면 자동 배포됩니다.
+
 ## 내용 수정
 
 - **예식 정보 전부**: `src/config/wedding.ts` 한 파일만 고치면 됩니다. (`TODO` 표시 참고)
