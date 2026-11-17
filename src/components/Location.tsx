@@ -40,7 +40,7 @@ export default function Location() {
   };
 
   return (
-    <section className="section section-soft" aria-labelledby="location-title">
+    <section id="location" className="section section-soft" aria-labelledby="location-title">
       <div className="reveal">
         <span className="eyebrow">LOCATION</span>
         <h2 id="location-title" className="section-title">

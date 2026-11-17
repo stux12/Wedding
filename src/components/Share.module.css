@@ -1,0 +1,36 @@
+.share {
+  padding-top: 56px;
+  padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  background: var(--bg-soft);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 14px;
+}
+
+.kakao {
+  background: #fee500;
+  border-color: #fee500;
+  color: #191600;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
