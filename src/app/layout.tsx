@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Gowun_Batang } from "next/font/google";
-import { wedding } from "@/config/wedding";
-import { getSiteUrl, shareTitle, shareDescription } from "@/lib/site";
+import { getSiteUrl } from "@/lib/site";
 import RevealObserver from "@/components/RevealObserver";
 import Toaster from "@/components/Toaster";
 import "./globals.css";
@@ -13,24 +12,12 @@ const serif = Gowun_Batang({
   variable: "--font-serif",
 });
 
+// 공통(기본) 메타데이터는 일반 문구만. 이름·일정은 청첩장 페이지(page.tsx)에서만 설정해
+// 404·안내 페이지 등 다른 화면으로 정보가 새지 않도록 합니다.
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
-  title: shareTitle,
-  description: shareDescription.replace(/\n/g, " · "),
-  openGraph: {
-    type: "website",
-    locale: "ko_KR",
-    title: shareTitle,
-    description: shareDescription.replace(/\n/g, " · "),
-    url: "/",
-    images: [{ url: wedding.images.og, width: 1200, height: 630, alt: shareTitle }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: shareTitle,
-    description: shareDescription.replace(/\n/g, " · "),
-    images: [wedding.images.og],
-  },
+  title: "모바일 청첩장",
+  description: "모바일 청첩장 준비중입니다.",
   robots: { index: false, follow: false },
   formatDetection: { telephone: false, address: false, email: false },
 };
