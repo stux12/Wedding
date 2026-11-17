@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Greeting from "@/components/Greeting";
 import Calendar from "@/components/Calendar";
+import Gallery from "@/components/Gallery";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Greeting />
       <Calendar />
+      <Gallery />
     </main>
   );
 }
